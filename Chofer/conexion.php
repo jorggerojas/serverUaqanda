@@ -25,8 +25,7 @@ class Conexion
     */
     public function __construct()
     {
-
-        $this->host = 'localhost';
+        $this->host = "localhost";
         $this->user = 'root';
         $this->pass = '';
         $this->database = 'uaq-anda';
@@ -82,27 +81,9 @@ class Conexion
         $result = $this->link->query($qry);
         return $result;
     }
-
     public function delete($qry){
-      $result = $this->link->query($qry);
-      return $result;
-    }
-
-
-    /**
-    * function close():void
-    * @author Jorge Luis Rojas Arcos
-    * @version 1.0
-    * La función 'close(conexion)' cierra la conexión establecida para
-    * manejo de la base de datos.
-    * @param $con
-    *         Objeto tipo msqli que contiene la conexión a la base de datos
-    *
-    */
-    public function cls($con){
-      //Se usa la función 'mysqli_close()' para cerrar la conexión (que se manda de parámetro)
-      $con = $this->link;
-      mysqli_close($con);
+        $result = $this->link->query($qry);
+        return $result;
     }
 
 

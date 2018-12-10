@@ -228,8 +228,7 @@ include_once('conexion.php');
       $tel = $_POST['tel'];
       echo "algo";
       $db = new Conexion();
-      echo $db->query("UPDATE usuarios SET Nombre='$nom',Apellido='$ape',Correo='$mail',
-                          Telefono='$tel' WHERE idUsuario = '$us' AND ClaveExpediente = '$exp'");
+      echo $db->query("UPDATE usuarios SET Nombre='JORGE' WHERE idUsuario = 0");
     }
 
     //Obtener datos de un viaje en específico

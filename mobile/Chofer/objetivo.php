@@ -10,7 +10,6 @@ require_once('solicitarUnidad.php');
 require_once('check.php');
 require_once('token.php');
 include_once('conexion.php');
-error_reporting(0);
 
 if($_POST['bandera'] == 'horaSalida'){
 

@@ -227,11 +227,12 @@ include_once('conexion.php');
       $mail = $_POST['mail'];
       $tel = $_POST['tel'];
       $r = upUsSC($us, $exp,$nom,$ape,$mail,$tel);
-      if($r){
-        echo json_encode(1);
-      }else{
-        echo json_encode(2);
-      }
+      echo json_encode($r);
+      // if($r){
+      //   echo 1;
+      // }else{
+      //   echo 2;
+      // }
 
     }
 

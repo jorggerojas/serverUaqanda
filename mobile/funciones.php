@@ -747,13 +747,18 @@ function upUs($us, $exp,$nom,$ape,$mail,$tel,$p1){
 */
 function upUsSC($us, $exp,$nom,$ape,$mail,$tel){
   $db = new Conexion();
-  $u = $db->query("UPDATE usuarios SET Nombre='$nom',Apellido='$ape',Correo='$mail',
-                    Telefono='$tel' WHERE idUsuario = '$us' AND ClaveExpediente = '$exp'");
-  if($u){
-    return true;
-  }else{
-    return false;
+  try {
+    $u = $db->query("UPDATE usuarios SET Nombre='$nom',Apellido='$ape',Correo='$mail',
+                      Telefono='$tel' WHERE idUsuario = '$us' AND ClaveExpediente = '$exp'");
+    if($u){
+      return true;
+    }else{
+      return false;
+    }
+  } catch (\Exception $e) {
+    return $e;
   }
+
   cls($db);
 }
 

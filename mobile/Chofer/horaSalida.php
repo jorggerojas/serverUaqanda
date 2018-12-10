@@ -38,7 +38,7 @@ function salir($idViaje){
   );
 
   $ch = curl_init();
-  $server_key= 'AAAAt2XmO_E:APA91bEZ9Vn8TVbNIjAsYea9sWolBup8AHW9TkIgCkMvEoDagmrQashXRHU9ohPCD409UoHoPqsIGn2NizgA_BtJXzKRllFXGlFCbgCfVtl0yTBLNpAzgDChObkmYGWFIgp-akbG7pTy';
+  $server_key= 'AAAA38EOB9k:APA91bEjbHv0MKUUv45NhyAIxVmQwWm0vN8ScAetaMJhZhgQuHFZljdiZ8w02rn-73r0NEwK83EhWb-qqFpaHlEGNXcejyK7ovzJWjg-jep0YXFcNVVFrHvawKMLiPddwB6qsnmpThTP';
   $headers = array(
     'Content-Type:application/json',
     'Authorization:key='.$server_key

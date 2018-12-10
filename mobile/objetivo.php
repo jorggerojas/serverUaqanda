@@ -226,6 +226,7 @@ include_once('conexion.php');
       $ape = $_POST['ape'];
       $mail = $_POST['mail'];
       $tel = $_POST['tel'];
+      echo "algo";
       $db = new Conexion();
       echo $db->query("UPDATE usuarios SET Nombre='$nom',Apellido='$ape',Correo='$mail',
                           Telefono='$tel' WHERE idUsuario = '$us' AND ClaveExpediente = '$exp'");

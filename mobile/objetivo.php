@@ -226,7 +226,9 @@ include_once('conexion.php');
       $ape = $_POST['ape'];
       $mail = $_POST['mail'];
       $tel = $_POST['tel'];
-      echo upUsSC($us, $exp,$nom,$ape,$mail,$tel);
+      $db = new Conexion();
+      echo $db->query("UPDATE usuarios SET Nombre='$nom',Apellido='$ape',Correo='$mail',
+                          Telefono='$tel' WHERE idUsuario = '$us' AND ClaveExpediente = '$exp'");
     }
 
     //Obtener datos de un viaje en específico

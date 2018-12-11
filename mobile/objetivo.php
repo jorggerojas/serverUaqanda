@@ -226,9 +226,12 @@ include_once('conexion.php');
       $ape = $_POST['ape'];
       $mail = $_POST['mail'];
       $tel = $_POST['tel'];
-      echo "algo";
       $db = new Conexion();
-      echo $db->query("UPDATE usuarios SET Nombre='JORGE' WHERE idUsuario = 0");
+      if($r){
+        echo json_encode(1);
+      }else{
+        echo json_encode(2);
+      }
     }
 
     //Obtener datos de un viaje en específico

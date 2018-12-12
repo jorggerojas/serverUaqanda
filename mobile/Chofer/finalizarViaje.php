@@ -43,7 +43,7 @@ function finalizar($idViaje,$inicio,$final){
     'Authorization:key='.$server_key
   );
   for ($i=0; $i <count($datos); $i++) {
-    $tok = $datos[$i][token];
+    $tok = $datos[$i]['token'];
     $fields = array
     (
     	'to' 	=> $tok,

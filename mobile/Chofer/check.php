@@ -47,7 +47,7 @@ function check($idUsuario,$idViaje){
   );
   //Se envía la notificación a todos los usuarios del viaje
   for ($i=0; $i <count($datos); $i++) {
-    $tok = $datos[$i][token];
+    $tok = $datos[$i]['token'];
     $fields = array
     (
       'to' 	=> $tok,

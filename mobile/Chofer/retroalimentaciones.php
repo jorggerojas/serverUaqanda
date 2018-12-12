@@ -7,12 +7,12 @@ function verRetro($idUsuario){
   $bandera;
   if($datos != false){
     for($i = 0; $i < count($datos); $i++){
-      $horaV = $datos[$i][Horario];
-      $originalDate = $datos[$i][fecha];
+      $horaV = $datos[$i]['Horario'];
+      $originalDate = $datos[$i]['fecha'];
       $newDate = date("d-m-Y", strtotime($originalDate));
       $newHora = date("H:i", strtotime($horaV));
-      $datos[$i][Horario] = $newHora;
-      $datos[$i][fecha] = $newDate;
+      $datos[$i]['Horario'] = $newHora;
+      $datos[$i]['fecha'] = $newDate;
     }
     $bandera = $datos;
   }
@@ -24,12 +24,12 @@ function buscarRetro($idRetro){
   $datos = $db->query("SELECT u.Nombre as 'Nombre',u.Apellido as 'Apellido' ,v.fecha as 'fecha',v.Horario as 'Horario', r.PuntoInicial as 'PuntoInicial',r.PuntoFinal as 'PuntoFinal',cl.Calificacion as 'Calificacion', cl.Retroalimentacion as 'Retroalimentacion'
     FROM usuarios u, viajes v, choferes c, calificaciones cl, rutas r
     WHERE cl.idUsuario = u.idUsuario AND cl.idCalificacion = {$idRetro} AND r.idRuta = v.idRuta AND v.idViaje = cl.idViaje");
-  $horaV = $datos[0][Horario];
-  $originalDate = $datos[0][fecha];
+  $horaV = $datos[0]['Horario'];
+  $originalDate = $datos[0]['fecha'];
   $newDate = date("d-m-Y", strtotime($originalDate));
   $newHora = date("H:i", strtotime($horaV));
-  $datos[0][Horario] = $newHora;
-  $datos[0][fecha] = $newDate;
+  $datos[0]['Horario'] = $newHora;
+  $datos[0]['fecha'] = $newDate;
   return $datos;
   cls($db);
 }

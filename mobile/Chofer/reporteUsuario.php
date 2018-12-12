@@ -11,8 +11,8 @@ function reportar($exp,$desc,$usuario,$viaje){
     $datos2 = $db->query("SELECT * FROM choferes WHERE idUsuario = {$usuario}");
     if(sizeof($datos)>0 && sizeof($datos1)){
         $descripcion = $desc;
-        $idUs = $datos2[0][idChofer];
-        $idUsR = $datos1[0][idUsuario];
+        $idUs = $datos2[0]['idChofer'];
+        $idUsR = $datos1[0]['idUsuario'];
         $consulta = "INSERT INTO reportes(descripcion,idUsuario,idChofer) VALUES('{$descripcion}','{$idUsR}','{$idUs}')";
         $bandera = $db->insert($consulta);
     }

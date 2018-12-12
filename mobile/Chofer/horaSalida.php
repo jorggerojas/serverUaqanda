@@ -14,7 +14,7 @@ function horaSalida($usuario){
       $horaV = $datos[$i]['hora'];
       $newHora = date("H:i", strtotime($horaV));
       if($newHora > $hora){
-        $datos[$i][hora] = $newHora;
+        $datos[$i]['hora'] = $newHora;
         $bandera = $datos[$i];
         break;
       }
@@ -44,7 +44,7 @@ function salir($idViaje){
     'Authorization:key='.$server_key
   );
   for ($i=0; $i <count($datos); $i++) {
-    $tok = $datos[$i][token];
+    $tok = $datos[$i]['token'];
     $fields = array
     (
       'to' 	=> $tok,

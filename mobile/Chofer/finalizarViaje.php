@@ -29,11 +29,11 @@ function finalizar($idViaje,$inicio,$final){
   $bandera = $db->update("UPDATE reservaciones SET status = 'finalizado' WHERE idViaje = {$idViaje}");
   $bandera = $db->update("UPDATE viajes SET status = 'finalizado', duracion = {$duracion} WHERE idViaje = {$idViaje}");
   $url = "https://fcm.googleapis.com/fcm/send";
-  $data = '"notification":{"title":"Viaje Finalizado", "body":"El viaje a finalizado con exito!"},"to":';
+  $data = '"notification":{"title":"Viaje Finalizado", "body":"¡El viaje ha finalizado con exito!"},"to":';
   $msg = array
   (
   	'title' => 'Viaje Finalizado',
-    'body' => 'El viaje a finalizado con exito!'
+    'body' => '¡El viaje a finalizado con exito!'
   );
 
   $ch = curl_init();

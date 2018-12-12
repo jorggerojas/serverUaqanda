@@ -30,13 +30,13 @@ function check($idUsuario,$idViaje){
   //Se inicia la creación de las notificaciones con Firebase Cloud Messaging
   $url = "https://fcm.googleapis.com/fcm/send";
   //Datos de la notificación
-  $data = '"notification":{"title":"Viaje inicializado", "body":"El viaje a iniciado con exito!"},"to":';
+  $data = '"notification":{"title":"Tu viaje ha comenzado", "body":"¡El viaje a iniciado con exito!"},"to":';
   $final = $temp[0]['Final'];
   //Descripción de la notificación
   $msg = array
   (
-    'title' => 'Camion en parada!',
-    'body' => 'El camion esta en una para de tu viaje'
+    'title' => 'Camión en parada!',
+    'body' => 'El camión esta en una parada del viaje'
   );
   //Se inicia el CURL y se instancia la llave del servidor, se colocan los haeaders
   $ch = curl_init();

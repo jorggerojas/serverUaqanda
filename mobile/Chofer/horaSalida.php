@@ -30,11 +30,11 @@ function salir($idViaje){
   $bandera = $db->delete("DELETE FROM filaespera WHERE StatusActual = 'reservado' AND idViaje ={$idViaje}");
   $datos = $db->query("SELECT u.token AS token FROM usuarios u, reservaciones r where u.idUsuario = r.idUsuario AND r.idViaje = {$idViaje}");
   $url = "https://fcm.googleapis.com/fcm/send";
-  $data = '"notification":{"title":"Viaje inicializado", "body":"El viaje a iniciado con exito!"},"to":';
+  $data = '"notification":{"title":"Tu viaje ha comenzado", "body":"¡El viaje a iniciado con exito!"},"to":';
   $msg = array
   (
-    'title' => 'Viaje inicializado',
-    'body' => 'El viaje a iniciado con exito!'
+    'title' => 'Tu viaje ha comenzado',
+    'body' => '¡El viaje a iniciado con exito!'
   );
 
   $ch = curl_init();

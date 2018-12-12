@@ -1,12 +1,20 @@
 <?php
+//Se incluye el archivo de conexión con la base de datos
 include_once('conexion.php');
+//Se condiciona el servidor para hacer uso de la zona horaria de México
+date_default_timezone_set('America/Mexico_City');
 
+/**
+* function horaSalida(int):array
+* Esta funcion obtiene la hora actual y lo toma para mostrar en el cliente
+* @param int $usuario : ID del usuario loggeado
+* @return array $bandera: arreglo de datos enviados por la consulta hecha
+*/
 function horaSalida($usuario){
   $db = new Conexion();
   $usuario = $_POST['idUsuario'];
   $datos = $db->query("SELECT v.idViaje as id, v.Horario as hora FROM viajes v, choferes c WHERE v.idChofer = c.idChofer AND c.idUsuario = {$usuario}
                        AND v.status = 'En espera' ORDER BY v.Horario ASC");
-  date_default_timezone_set('America/Mexico_City');
   $hora = date("H:i");
   $bandera;
   if(is_array($datos)){
@@ -23,6 +31,14 @@ function horaSalida($usuario){
   return $bandera;
 }
 
+/**
+* function salir(int):bool
+* @author Azael Donovan Ávila Aldama
+* La función salir() elimina las reservaciones no confirmadas de los usuarios e inicia un viaje, notificando
+* a los usuarios que han confirmado el viaje
+* @param int $idViaje : ID del viaje que va a iniciar rumbo
+* @return bool Éxito en la eliminación de reservaciones no confirmadas y la edición del campo status en la tabla reservaciones
+*/
 function salir($idViaje){
   $db = new Conexion();
   $bandera = $db->update("UPDATE viajes SET status = 'curso' WHERE idViaje = {$idViaje}");

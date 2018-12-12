@@ -1,6 +1,13 @@
 <?php
+//Se incluye el archivo de conexión
 include_once('conexion.php');
 
+/**
+* function verRetro(int) : array
+* @author Azael Donovan Ávila Aldama
+* La función verRetro sirve para visualizar las retroalimentaciones de un viaje
+* @param int $idUsuario : ID del chofer loggeado
+*/
 function verRetro($idUsuario){
   $db = new Conexion();
   $datos = $db->query("SELECT cl.idCalificacion ,v.fecha,v.Horario, r.PuntoInicial,r.PuntoFinal,cl.Calificacion FROM viajes v, choferes c, calificaciones cl, rutas r WHERE c.idUsuario = {$idUsuario} AND v.idChofer= c.idChofer AND r.idRuta = v.idRuta AND v.idViaje = cl.idViaje");
@@ -19,6 +26,13 @@ function verRetro($idUsuario){
   return $bandera;
   cls($db);
 }
+
+/**
+* function buscarRetro(int) : array
+* @author Azael Donovan Ávila Aldama
+* La función buscarRetro muestra una Retroalimentación de manera más específica
+* @param int $idRetro : ID de la Retroalimentación
+*/
 function buscarRetro($idRetro){
   $db = new Conexion();
   $datos = $db->query("SELECT u.Nombre as 'Nombre',u.Apellido as 'Apellido' ,v.fecha as 'fecha',v.Horario as 'Horario', r.PuntoInicial as 'PuntoInicial',r.PuntoFinal as 'PuntoFinal',cl.Calificacion as 'Calificacion', cl.Retroalimentacion as 'Retroalimentacion'

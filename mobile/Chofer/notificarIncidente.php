@@ -1,7 +1,18 @@
 <?php
+//Se incluye el archivo de conexión
 include_once('conexion.php');
 
 
+/**
+* function incidente(string, string, string, int, int) : bool
+* La función incidente() registra un incidente en la base de datos
+* @author Azael Donovan Ávila Aldama
+* @param string $hor : La hora registrada del incidente
+* @param string $lug : Lugar donde se registra el incidente
+* @param string $desc : Descripción del incidente registrado
+* @param int $usuario : ID del usuario que registra el incidente
+* @param int $viaje : ID del viaje donde se registra el incidente
+*/
 function incidente($hor,$lug,$desc,$usuario,$viaje){
 
 

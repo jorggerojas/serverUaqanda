@@ -1,7 +1,13 @@
 <?php
+//Se incluye el archivo de conexión a la base de datos
 include_once('conexion.php');
 
-
+/**
+* function infoViaje(int) : array
+* @author Azael Donovan Ávila Aldama
+* La función infoViaje() obtiene y retorna los datos del viaje especificado
+* @param int $idViaje : ID del viaje en cuestion
+*/
 function infoViaje($idViaje){
   $db = new Conexion();
   $cuenta = $db->query("SELECT count(status) as ocupados FROM reservaciones WHERE idViaje = {$idViaje} AND status = 'confirmado'");

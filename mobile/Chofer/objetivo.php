@@ -1,4 +1,5 @@
 <?php
+//Se instancian los archivos donde se realizan las funciones principales
 require_once('horaSalida.php');
 require_once('notificarIncidente.php');
 require_once('infoViaje.php');
@@ -11,6 +12,9 @@ require_once('check.php');
 require_once('token.php');
 include_once('conexion.php');
 
+//En este archivo se realizan las redirecciones pertinentes a las diferentes funciones del sistema
+
+//Notificar hora de salida
 if($_POST['bandera'] == 'horaSalida'){
 
   $datos = horaSalida($_POST['idUsuario']);
@@ -23,6 +27,8 @@ if($_POST['bandera'] == 'horaSalida'){
   }
 
 }
+
+//Función salir
 if($_POST['bandera'] == 'salir'){
   if($_POST['idViaje'] != null){
     $bandera = salir($_POST['idViaje']);
@@ -35,6 +41,8 @@ if($_POST['bandera'] == 'salir'){
     echo "2";
   }
 }
+
+//Notificar incidente
 if($_POST['bandera'] == 'notificar'){
 
   $horaV = $_POST['hora'];
@@ -46,6 +54,8 @@ if($_POST['bandera'] == 'notificar'){
     echo "no";
   }
 }
+
+//Obtener información del viaje
 if($_POST['bandera'] == 'informacion'){
   $datos = infoViaje($_POST['idViaje'],$_POST['status']);
   if($datos != ""){
@@ -55,6 +65,8 @@ if($_POST['bandera'] == 'informacion'){
     echo "nel";
   }
 }
+
+//Finalizar viaje
 if($_POST['bandera'] == 'finalizar'){
   $resp= finalizar($_POST['idViaje'],$_POST['inicial'],$_POST['final']);
   if(finalizar($_POST['idViaje'],$_POST['inicial'],$_POST['final'])){
@@ -63,6 +75,8 @@ if($_POST['bandera'] == 'finalizar'){
     echo "nel";
   }
 }
+
+//Reportar usuario
 if($_POST['bandera'] == 'reportar'){
 
   if(reportar($_POST['expediente'],$_POST['descripcion'],$_POST['idUsuario'],$_POST['idViaje'])){
@@ -73,6 +87,7 @@ if($_POST['bandera'] == 'reportar'){
   }
 }
 
+//Ver retroalimentación del viaje
 if($_POST['bandera'] == 'verRetro'){
   $datos = verRetro($_POST['idUsuario']);
   if($datos != ""){
@@ -81,6 +96,8 @@ if($_POST['bandera'] == 'verRetro'){
     echo "nel";
   }
 }
+
+//Buscar retroalimentaciones por viaje
 if($_POST['bandera'] == 'buscarRetro'){
   $datos = buscarRetro($_POST['idRetroalimentacion']);
   if($datos != ""){
@@ -90,6 +107,7 @@ if($_POST['bandera'] == 'buscarRetro'){
   }
 }
 
+//Ver historial de viajes
 if($_POST['bandera'] == 'verHistorial'){
   $datos = verHistorial($_POST['chofer']);
   if($datos != ""){
@@ -99,6 +117,7 @@ if($_POST['bandera'] == 'verHistorial'){
   }
 }
 
+//Buscar viajes
 if($_POST['bandera'] == 'buscarViaje'){
   $datos = buscarViaje($_POST['idViaje']);
   if($datos != ""){
@@ -107,6 +126,8 @@ if($_POST['bandera'] == 'buscarViaje'){
     echo "nel";
   }
 }
+
+//Filtrar viajes
 if($_POST['bandera'] == 'filtrar'){
   $datos = filtrarViaje($_POST['chofer'],$_POST['fecha']);
   if($datos != ""){
@@ -116,6 +137,7 @@ if($_POST['bandera'] == 'filtrar'){
   }
 }
 
+//Solicitar unidad
 if($_POST['bandera'] == 'solicitarU'){
   if(solicitar($_POST['destino'],$_POST['motivo'],$_POST['chofer'],$_POST['viaje'])){
     echo "ok";
@@ -124,6 +146,7 @@ if($_POST['bandera'] == 'solicitarU'){
   }
 }
 
+//Hacer check-in
 if($_POST['bandera'] == 'check'){
   $us = $_POST['us'];
   $vi = $_POST['viaje'];
@@ -134,6 +157,8 @@ if($_POST['bandera'] == 'check'){
     echo json_encode(2);
   }
 }
+
+//Se obtiene el token del usuario
 if($_POST['bandera'] == 'token'){
   $token = $_POST['token'];
   $us = $_POST['usuario'];

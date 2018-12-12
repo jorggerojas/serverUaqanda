@@ -25,10 +25,11 @@ class Conexion
     */
     public function __construct()
     {
-        $this->host = "us-cdbr-iron-east-01.cleardb.net";
-        $this->user = 'bbc44b817897f1';
-        $this->pass = '27b80d4c';
-        $this->database = 'heroku_dc4918426883fe6';
+
+      $this->host = "us-cdbr-iron-east-01.cleardb.net";
+      $this->user = 'bbc44b817897f1';
+      $this->pass = '27b80d4c';
+      $this->database = 'heroku_dc4918426883fe6';
 
         /** Se crea una nueva conexion mysql con los parametros que recibe la funcion y se guarda en la variable link */
         @$this->link = new mysqli($this->host,$this->user,$this->pass,$this->database);
@@ -77,13 +78,41 @@ class Conexion
         return $result;
     }
 
+    /**
+    * Esta función se utiliza para realizar ediciones en la base de datos.
+    * @param $qry - recibe el query a realizar en la base de datos
+    * @return $result - regresa la respuesta de la base de datos
+    */
     public function update($qry){
         $result = $this->link->query($qry);
         return $result;
     }
+
+    /**
+    * Esta función se utiliza para realizar supresiones en la base de datos.
+    * @param $qry - recibe el query a realizar en la base de datos
+    * @return $result - regresa la respuesta de la base de datos
+    */
     public function delete($qry){
-        $result = $this->link->query($qry);
-        return $result;
+      $result = $this->link->query($qry);
+      return $result;
+    }
+
+
+    /**
+    * function close():void
+    * @author Jorge Luis Rojas Arcos
+    * @version 1.0
+    * La función 'close(conexion)' cierra la conexión establecida para
+    * manejo de la base de datos.
+    * @param $con
+    *         Objeto tipo msqli que contiene la conexión a la base de datos
+    *
+    */
+    public function cls($con){
+      //Se usa la función 'mysqli_close()' para cerrar la conexión (que se manda de parámetro)
+      $con = $this->link;
+      mysqli_close($con);
     }
 
 

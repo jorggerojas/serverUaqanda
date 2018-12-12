@@ -78,11 +78,21 @@ class Conexion
         return $result;
     }
 
+    /**
+    * Esta función se utiliza para realizar ediciones en la base de datos.
+    * @param $qry - recibe el query a realizar en la base de datos
+    * @return $result - regresa la respuesta de la base de datos
+    */
     public function update($qry){
         $result = $this->link->query($qry);
         return $result;
     }
 
+    /**
+    * Esta función se utiliza para realizar supresiones en la base de datos.
+    * @param $qry - recibe el query a realizar en la base de datos
+    * @return $result - regresa la respuesta de la base de datos
+    */
     public function delete($qry){
       $result = $this->link->query($qry);
       return $result;

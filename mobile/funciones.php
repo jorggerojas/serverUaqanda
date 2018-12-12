@@ -747,14 +747,13 @@ function upUs($us, $exp,$nom,$ape,$mail,$tel,$p1){
 */
 function upUsSC($us, $exp,$nom,$ape,$mail,$tel){
   $db = new Conexion();
-  try {
-    $r =  $db->update("UPDATE usuarios SET Nombre='$nom',Apellido='$ape',Correo='$mail',
+    $u =  $db->update("UPDATE usuarios SET Nombre='$nom',Apellido='$ape',Correo='$mail',
                       Telefono='$tel' WHERE idUsuario = '$us' AND ClaveExpediente = '$exp'");
-    return $r;
-  } catch (\Exception $e) {
-    return $e;
+  if($u){
+    return true;
+  }else{
+    return false;
   }
-
   cls($db);
 }
 

@@ -226,7 +226,7 @@ include_once('conexion.php');
       $ape = $_POST['ape'];
       $mail = $_POST['mail'];
       $tel = $_POST['tel'];
-      $db = new Conexion();
+      $r = upUsSC($us, $exp,$nom,$ape,$mail,$tel);
       if($r){
         echo json_encode(1);
       }else{

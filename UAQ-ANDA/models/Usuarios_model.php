@@ -9,7 +9,7 @@
 		*		@return respuesta del Query
   		*/
   		public function  selectUser(){
-  			return $this->db->selectStrict('idUsuario, Nombre,Apellido, ClaveExpediente, Correo', 'usuarios', " status = 3 ");
+  			return $this->db->selectStrict('*', 'Usuarios', " status = 3 ");
   		}
 
   		/**
@@ -19,7 +19,7 @@
 		*		@return bool con el resultado de la ejecución de la consulta
   		*/
   		public function deleteStatusUser($id){
-  			return $this->db->deleteByStatus("usuarios", "idUsuario = '$id' ", "status", 4 );
+  			return $this->db->deleteByStatus("Usuarios", "idUsuario = '$id' ", "status", 4 );
   		}
 
   		/**
@@ -29,7 +29,7 @@
 		*		@return bool con el resultado de la ejecución de la consulta
   		*/
   		public function aceptarStatusUser($id){
-  			return $this->db->deleteByStatus("usuarios", "idUsuario = '$id' ", "status", 2 );
+  			return $this->db->deleteByStatus("Usuarios", "idUsuario = '$id' ", "status", 2 );
   		}
 
   		/**
@@ -40,7 +40,7 @@
   		*		@return bool con el resultado de la ejecución de la consulta.
   		*/
   		public function retro($inicialP, $finalP){
-  			return $this->db->selectStrict("u.Nombre, c.Calificacion, c.Retroalimentacion, r.PuntoInicial, r.PuntoFinal", "calificaciones c, usuarios u, viajes v, rutas r", "c.idViaje = v.idViaje AND v.idRuta = r.idRuta AND c.idUsuario = u.idUsuario AND r.PuntoInicial LIKE '$inicialP' AND r.PuntoFinal LIKE 'finalP' ");
+  			return $this->db->selectStrict("u.Nombre, c.Calificacion, c.Retroalimentacion, r.PuntoInicial, r.PuntoFinal", "Calificaciones c, Usuarios u, Viajes v, Rutas r", "c.idViaje = v.idViaje AND v.idRuta = r.idRuta AND c.idUsuario = u.idUsuario AND r.PuntoInicial LIKE '$inicialP' AND r.PuntoFinal LIKE 'finalP' ");
   		}
   		/*
 			SELECT u.Nombre, c.Calificacion, c.Retroalimentacion, r.PuntoInicial, r.PuntoFinal FROM calificaciones c, usuarios u, viajes v, rutas r WHERE c.idViaje = v.idViaje AND v.idRuta = r.idRuta AND c.idUsuario = u.idUsuario AND r.PuntoInicial LIKE 'obrera' AND r.PuntoFinal LIKE 'cu'

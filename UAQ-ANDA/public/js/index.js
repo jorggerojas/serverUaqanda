@@ -128,22 +128,20 @@ function mostrarSolicitudes(){
   data.onreadystatechange = function(){
     if (data.readyState == 4 && data.status == 200){
       res = data.responseText;
-
+      
       try {
         res = JSON.parse(res);
         if (res != 1 && res != 2 && res != 3) {
         for(sol in res){
           count++;
-          divs += "<div class='caja'"+
-          "<div class='usuario2' id='"+res[sol][0]+"'>"+
-          "<p>"+res[sol][1]+"</p><br>"+
-          "<p>"+res[sol][2]+"-"+res[sol][3]+"</p><br>"+
-          "<p>"+res[sol][4]+"</p><br>"+
-          "<p>"+res[sol][5]+"</p><br>"+
-          "<div class='botones2'>"+
-            "<button class='aceptar' id='"+res[sol][0]+"' onclick='aceptarSolUnidad(this.id)'><img src='"+config['img']+"checked.png'></button><br>"+
-            "<button class='rechazar' id='"+res[sol][0]+"' onclick='eliminarSolUnidad(this.id)'><img src='"+config['img']+"cancel.png'></button>"+
-          "</div>"+
+          divs += "<div class='usuario' id='"+res[sol][0]+"'>"+
+          "<h3>"+res[sol][1]+"</h3><br>"+
+          "<h3>"+res[sol][2]+"-"+res[sol][3]+"</h3><br>"+
+          "<h3>"+res[sol][4]+"</h3><br>"+
+          "<h3>"+res[sol][5]+"</h3><br>"+
+          "<div class='botones'>"+
+            "<button id='"+res[sol][0]+"' onclick='aceptarSolUnidad(this.id)'><img src='"+config['img']+"checked.png'></button><br>"+
+            "<button id='"+res[sol][0]+"' onclick='eliminarSolUnidad(this.id)'><img src='"+config['img']+"cancel.png'></button>"+
           "</div>"+
           "</div>";
         }

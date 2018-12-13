@@ -11,7 +11,7 @@ function verHistorial($idUsuario){
   //Se instancia el objeto de conexión a la base de datos
   $db = new Conexion();
   //Se hace una consulta a la base de datos sobre los viajes ya finalizados
-  $datos = $db->query("SELECT v.idViaje, v.fecha,v.Horario, r.PuntoInicial,r.PuntoFinal FROM viajes v, choferes c, rutas r WHERE c.idUsuario = {$idUsuario} AND v.idChofer= c.idChofer AND r.idRuta = v.idRuta AND v.status = 'finalizado' v.status != 'eliminado' ORDER BY v.fecha DESC LIMIT 6 ");
+  $datos = $db->query("SELECT v.idViaje, v.fecha,v.Horario, r.PuntoInicial,r.PuntoFinal FROM viajes v, choferes c, rutas r WHERE c.idUsuario = {$idUsuario} AND v.idChofer= c.idChofer AND r.idRuta = v.idRuta AND v.status = 'finalizado' ORDER BY v.fecha DESC LIMIT 6 ");
   if($datos != false){
     for($i = 0; $i < count($datos); $i++){
       $horaV = $datos[$i]['Horario'];

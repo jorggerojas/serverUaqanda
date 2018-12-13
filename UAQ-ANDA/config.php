@@ -4,7 +4,7 @@
 	ini_set('display_errors', 'on');
 
 
-	define( 'URL' ,"https://uaq-anda.herokuapp.com/".basename(getcwd())."/");
+	define( 'URL' ,"https://uaq-anda.herokuapp.com/UAQ-ANDA".basename(getcwd())."/");
 	define( 'CSS' ,URL."public/css/");
 	define( 'JS' , URL."public/js/" );
 	define( 'IMG', URL."public/img/");
@@ -15,8 +15,8 @@
 	@$file = fopen("public/js/config.js", "w");
 	@fwrite($file,
 		'var config = {
-			url: "'.URL.'/UAQ-ANDA/",
-			img: "'.URL.'/UAQ-ANDA/public/img/"
+			url: "'.URL.'/",
+			img: "'.URL.'/public/img/"
 		}');
 	@fclose($file);
 

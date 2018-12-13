@@ -15,8 +15,8 @@
 	@$file = fopen("public/js/config.js", "w");
 	@fwrite($file,
 		'var config = {
-			url: "'.URL.'",
-			img: "'.URL.'public/img/"
+			url: "'.URL.'/Administracion/",
+			img: "'.URL.'/Administracion/public/img/"
 		}');
 	@fclose($file);
 

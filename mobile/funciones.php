@@ -687,8 +687,7 @@ function historialViajes($user){
 */
 function dropViaje($us, $id){
   $db = new Conexion();
-  $delete = $db->delete("DELETE FROM reservaciones WHERE idUsuario = '$us' AND idViaje = '$id' AND Status != 'Confirmado'
-                          OR idUsuario = '$us' AND idViaje = '$id' AND Status != 'En curso'");
+  $delete = $db->delete("DELETE FROM reservaciones WHERE idUsuario = '$us' AND idViaje = '$id'");
   if($delete){
     return true;
   }else{

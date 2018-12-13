@@ -15,8 +15,8 @@
 	@$file = fopen("public/js/config.js", "w");
 	@fwrite($file,
 		'var config = {
-			url: "'.URL.'/Administracion/",
-			img: "'.URL.'/Administracion/public/img/"
+			url: "'.URL.'/UAQ-ANDA/",
+			img: "'.URL.'/UAQ-ANDA/public/img/"
 		}');
 	@fclose($file);
 

@@ -4,7 +4,7 @@
 	ini_set('display_errors', 'on');
 
 
-	define( 'URL' ,"https://uaq-anda.herokuapp.com/Administracion".basename(getcwd())."/");
+	define( 'URL' ,"https://uaq-anda.herokuapp.com/Administracion/".basename(getcwd())."/");
 	define( 'CSS' ,URL."public/css/");
 	define( 'JS' , URL."public/js/" );
 	define( 'IMG', URL."public/img/");

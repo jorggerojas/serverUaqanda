@@ -50,8 +50,9 @@
     */
     function solicitudesUsuarios()
     {
+        print_r($_POST);
       $solicitudes = $this->model->selectUser();
-      print_r($_POST);
+
       print_r($solicitudes);
       //  // Se verifica la existencias de las variables de sesion y que estas sean diferentes de nulo
       // if ($this->comprobarSesion()) {

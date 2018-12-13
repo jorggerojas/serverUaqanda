@@ -40,7 +40,7 @@
     }
     /**
     * solicitudesUsuarios(): void
-    * Función hace uso de la función selectUser() de la clase Usuarios_model()
+    * Función hace uso de la función selectUser() de la clase Usuarios_model
     * la cual nos devuelve el conjunto de datos de las solicitudes de los usuarios que
     * aun se encuentran pendientes, estos se almacenan en un arreglo y se devuelven
     * como un objeto de tipo JSON
@@ -50,47 +50,48 @@
     */
     function solicitudesUsuarios()
     {
-       // Se verifica la existencias de las variables de sesion y que estas sean diferentes de nulo
-      if ($this->comprobarSesion()) {
-        try {
-          // Se verifica que los datos enviados por metodo POST no esten vacios
-          if (!empty($_POST)){
-            // Se obtienen los datos de la funcion selectUser() y se almacenan en la variable $solicitudes
-            $solicitudes = $this->model->selectUser();
-              // Se evalua que lo que se obtuvo en la base de datos no se encuentre vacio.
-            if (is_array($solicitudes)) {
-              // Se crea un arreglo donde se almacenaran los datos de la unidad
-              $us = [];
-              // Por medio del ciclo foreach se recorre el arreglo obtenido en unidades
-              foreach ($solicitudes as $solicitud => $columna) {
-                // Los datos se almacenan en variables
-                $id = $columna['idUsuario'];
-                $nb = $columna['Nombre'];
-                $ap = $columna['Apellido'];
-                $ex = $columna['ClaveExpediente'];
-                $co = $columna['Correo'];
-                // Los valores del $nb y $ap se almacenan en una sola variable
-                $nombre = $nb." ".$ap;
-                // Las variables se almacenan en el arreglo previamente creado
-                $us[] = [$id,$nombre,$ex,$co];
-              }
-              // Se devuelve el arreglo por medio de un objeto de tipo JSON
-              echo json_encode($us, JSON_UNESCAPED_UNICODE);
-            }else{
-              // Si el arreglo devuelto por la función selectUnidad() se encuentra vacio se devuelve un 1
-              echo json_encode("1", JSON_UNESCAPED_UNICODE);
-            }
-          }else {
-            // Si no se encuentran datos enviados por metodo POST se devuelve un 2
-            echo json_encode("2", JSON_UNESCAPED_UNICODE);
-          }
-        } catch (Exception $e) {
-          echo json_encode("3", JSON_UNESCAPED_UNICODE);
-        }
-      }else {
-        //En caso de que no se tenga una sesion valida nos redirige a la pagina principal del sistema
-        header('Location:'.URL);
-      }
+      echo "HOLA";
+      //  // Se verifica la existencias de las variables de sesion y que estas sean diferentes de nulo
+      // if ($this->comprobarSesion()) {
+      //   try {
+      //     // Se verifica que los datos enviados por metodo POST no esten vacios
+      //     if (!empty($_POST)){
+      //       // Se obtienen los datos de la funcion selectUser() y se almacenan en la variable $solicitudes
+      //       $solicitudes = $this->model->selectUser();
+      //         // Se evalua que lo que se obtuvo en la base de datos no se encuentre vacio.
+      //       if (is_array($solicitudes)) {
+      //         // Se crea un arreglo donde se almacenaran los datos de la unidad
+      //         $us = [];
+      //         // Por medio del ciclo foreach se recorre el arreglo obtenido en unidades
+      //         foreach ($solicitudes as $solicitud => $columna) {
+      //           // Los datos se almacenan en variables
+      //           $id = $columna['idUsuario'];
+      //           $nb = $columna['Nombre'];
+      //           $ap = $columna['Apellido'];
+      //           $ex = $columna['ClaveExpediente'];
+      //           $co = $columna['Correo'];
+      //           // Los valores del $nb y $ap se almacenan en una sola variable
+      //           $nombre = $nb." ".$ap;
+      //           // Las variables se almacenan en el arreglo previamente creado
+      //           $us[] = [$id,$nombre,$ex,$co];
+      //         }
+      //         // Se devuelve el arreglo por medio de un objeto de tipo JSON
+      //         echo json_encode($us, JSON_UNESCAPED_UNICODE);
+      //       }else{
+      //         // Si el arreglo devuelto por la función selectUnidad() se encuentra vacio se devuelve un 1
+      //         echo json_encode("1", JSON_UNESCAPED_UNICODE);
+      //       }
+      //     }else {
+      //       // Si no se encuentran datos enviados por metodo POST se devuelve un 2
+      //       echo json_encode("2", JSON_UNESCAPED_UNICODE);
+      //     }
+      //   } catch (Exception $e) {
+      //     echo json_encode("3", JSON_UNESCAPED_UNICODE);
+      //   }
+      // }else {
+      //   //En caso de que no se tenga una sesion valida nos redirige a la pagina principal del sistema
+      //   header('Location:'.URL);
+      // }
     }
     /**
     * aprobarSolicitudUsuario(): void

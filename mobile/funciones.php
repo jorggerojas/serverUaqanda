@@ -133,7 +133,11 @@ function obtenerViajes($inicial, $final){
                           WHERE u.idUnidad = v.idUnidad AND
                           v.idRuta = r.idRuta AND
                           r.PuntoInicial = '{$inicial}' AND r.PuntoFinal = '{$final}' AND fecha = '$hoy' AND
-                          v.Horario >= '$time'
+                          v.Horario >= '$time' AND v.Status != 'Eliminado' OR
+                          u.idUnidad = v.idUnidad AND
+                          v.idRuta = r.idRuta AND
+                          r.PuntoInicial = '{$inicial}' AND r.PuntoFinal = '{$final}' AND fecha = '$hoy' AND
+                          v.Horario >= '$time' AND v.Status != 'En curso'
                           ORDER BY v.Horario ASC");
     if(is_array($datos)){
       return $datos;

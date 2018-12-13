@@ -11,7 +11,7 @@ class Index extends Controller{
     *   Session (./libs/Session.php) para destruir la sesión
     *   @author Jorge Luis Rojas Arcos
     *   @version 1.0
-    */
+    */ 
     function Index()
     {
       //Se hace referencia a la clase View y

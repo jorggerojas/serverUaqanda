@@ -134,18 +134,20 @@ function mostrarSolicitudes(){
         if (res != 1 && res != 2 && res != 3) {
         for(sol in res){
           count++;
-          divs += "<div class='usuario' id='"+res[sol][0]+"'>"+
-          "<h3>"+res[sol][1]+"</h3><br>"+
-          "<h3>"+res[sol][2]+"-"+res[sol][3]+"</h3><br>"+
-          "<h3>"+res[sol][4]+"</h3><br>"+
-          "<h3>"+res[sol][5]+"</h3><br>"+
-          "<div class='botones'>"+
-            "<button id='"+res[sol][0]+"' onclick='aceptarSolUnidad(this.id)'><img src='"+config['img']+"checked.png'></button><br>"+
-            "<button id='"+res[sol][0]+"' onclick='eliminarSolUnidad(this.id)'><img src='"+config['img']+"cancel.png'></button>"+
-          "</div>"+
-          "</div>";
+          divs += "<div class='caja'>"+
+                    "<div class='usuario2' id='"+res[sol][0]+"'>"+
+                      "<p class='name'>Nombre: "+res[sol][1]+"</p>"+
+                      "<p class='ruta'>Ruta: "+res[sol][2]+"-"+res[sol][3]+"</p>"+
+                      "<p class='des'>Destino: "+res[sol][4]+"</p>"+
+                      "<p class='jus'>Justifiacion: "+res[sol][5]+"</p>"+
+                    "</div>"+
+                    "<div class='botones2'>"+
+                      "<button class='aceptar' id='"+res[sol][0]+"' onclick='aceptarSolUnidad(this.id)'><img src='"+config['img']+"checked.png'></button><br>"+
+                      "<button class='rechazar' id='"+res[sol][0]+"' onclick='eliminarSolUnidad(this.id)'><img src='"+config['img']+"cancel.png'></button>"+
+                    "</div>"+
+                  "</div><br><br>";
         }
-        solicitudes.innerHTML = divs;
+        solicitudes.innerHTML += divs;
     }else{
       verifData(res,solicitudes, "solicitudes");
     }

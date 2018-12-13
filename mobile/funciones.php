@@ -126,12 +126,14 @@ function obtenerViajes($inicial, $final){
     $db = new Conexion();
     //Se obtiene la fecha actual
     $hoy = date("Y-m-d");
+    $time = date("H:i");
     // Se hace una consulta a la base de datos para obtener los viajes del día de hoy
     $datos = $db->query("SELECT v.idViaje AS idViaje, r.PuntoInicial, r.PuntoFinal, r.Adicional, v.Horario, u.Capacidad
                           FROM rutas r, viajes v, unidades u
                           WHERE u.idUnidad = v.idUnidad AND
                           v.idRuta = r.idRuta AND
-                          r.PuntoInicial = '{$inicial}' AND r.PuntoFinal = '{$final}' AND fecha = '$hoy'
+                          r.PuntoInicial = '{$inicial}' AND r.PuntoFinal = '{$final}' AND fecha = '$hoy' AND
+                          v.Horario >= '$time'
                           ORDER BY v.Horario ASC");
     if(is_array($datos)){
       return $datos;
@@ -192,7 +194,7 @@ function reservar($viaje, $idUsuario) {
       $r = $db->query("SELECT * FROM reservaciones WHERE idUsuario = '$idUsuario'");
       if(is_array($r)){
           for ($i=0; $i < count($r); $i++) {
-            if($r[$i]['Status'] != "Reservado" && $r[$i]['Status'] != "Confirmado"){
+            if($r[$i]['Status'] != "Reservado" && $r[$i]['Status'] != "Confirmado" && $r[$i]['idViaje'] != $viaje){
               $f = $db->query("SELECT * FROM filaespera WHERE idUsuario = '$idUsuario'");
               if(is_array($f)){
                 for ($j=0; $j < count($f); $j++) {

@@ -21,11 +21,11 @@
 	@fclose($file);
 
 	//Constantes de la base de datos
-	define( 'DB_HOST' , 'localhost');
-	define( 'DB_USER' , 'root');
-	define( 'DB_PASS' , '');
-	define( 'DB_NAME' , 'uaq-anda');
-	define('DB_CHARSET', 'utf-8');
+	define( 'DB_HOST' , 'us-cdbr-iron-east-01.cleardb.net');
+	define( 'DB_USER' , 'bbc44b817897f1');
+	define( 'DB_PASS' , '27b80d4c');
+	define( 'DB_NAME' , 'heroku_dc4918426883fe6');
+	define('DB_CHARSET', 'utf8');
 
 
 	define( 'ALGOR', 'sha1');

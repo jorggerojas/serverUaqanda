@@ -1,10 +1,9 @@
 <?php
-    echo "HOLA";
-    // require_once 'config.php';
-    //
-    // $url = (isset($_GET["url"])) ? $_GET["url"]: "Index/index";
-    // $url = explode("/",$url);
-    //
+    require_once 'config.php';
+
+    $url = (isset($_GET["url"])) ? $_GET["url"]: "Index/index";
+    $url = explode("/",$url);
+    print_r($url);
     // if( isset($url[0]) && $url[0] != '' ) { $controller =  $url[0]; }
     // if( isset($url[1]) && $url[1] != '' ) { $method = $url[1]; }
     // if( isset($url[2]) && $url[2] != '' ) { $params = $url[2]; }
@@ -35,5 +34,5 @@
     // } else {
     //     $controller = new Controller();
     //     $controller->pageNotFound();
-    //}
+    // }
 ?>

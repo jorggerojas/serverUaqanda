@@ -128,7 +128,7 @@ function mostrarSolicitudes(){
   data.onreadystatechange = function(){
     if (data.readyState == 4 && data.status == 200){
       res = data.responseText;
-      
+
       try {
         res = JSON.parse(res);
         if (res != 1 && res != 2 && res != 3) {
@@ -708,6 +708,7 @@ function cargarUsuarios(){
   data.onreadystatechange = function(){
     if (data.readyState == 4 && data.status == 200){
       res = data.responseText;
+      console.log(res);
       try {
         res = JSON.parse(res);
         if (res != 1 && res != 2 && res != 3) {

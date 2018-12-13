@@ -665,8 +665,8 @@ function historialViajes($user){
   $db = new Conexion();
   $r = $db->query("SELECT DISTINCT res.idViaje as 'id', v.Fecha as 'Fecha', v.Horario as 'Hora', r.PuntoInicial as 'Inicio', r.PuntoFinal as 'Final'
                   FROM viajes v, rutas r, reservaciones res WHERE res.idUsuario ='$user' AND res.idViaje = v.idViaje AND
-                  v.idRuta = r.idRuta AND res.Status != 'En espera' OR res.idUsuario ='$user' AND res.idViaje = v.idViaje AND
-                  v.idRuta = r.idRuta AND res.Status != 'En curso'  LIMIT 6");
+                  v.idRuta = r.idRuta AND res.Status != 'Reservado' OR res.idUsuario ='$user' AND res.idViaje = v.idViaje AND
+                  v.idRuta = r.idRuta AND res.Status = 'Finalizado'  LIMIT 6");
   if(is_array($r)){
     $temp = $r;
   }else{

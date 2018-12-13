@@ -76,7 +76,7 @@
 		*		@return respuesta del Query
 	  	*/
 	  	public function selectSolicitudUnidad(){
-	  		return $this->db->selectStrict("s.idSolicitud, s.Destino, s.Justificacion, r.PuntoInicial, r.PuntoFinal, u.Nombre, s.status", "solicitudunidades s, viajes v, rutas r, choferes c, usuarios u", "s.idViaje = v.idViaje AND v.idRuta = r.idRuta AND s.idChofer = c.idChofer AND c.idUsuario = u.idUsuario AND s.status = '3'");
+	  		return $this->db->selectStrict("s.idSolicitud, s.Destino, s.Justificacion, r.PuntoInicial, r.PuntoFinal, u.Nombre, s.status", "solicitudunidades s, viajes v, rutas r, choferes c, usuarios u", "s.idViaje = v.idViaje AND v.idRuta = r.idRuta AND s.idChofer = c.idChofer AND c.idUsuario = u.idUsuario AND s.status = '1'");
 
 	  		/*SELECT s.idSolicitud, s.Destino, s.Justificacion, r.PuntoInicial, r.PuntoFinal, u.Nombre, s.status from solicitudunidades s, viajes v, rutas r, choferes c, usuarios u where s.idViaje = v.idRuta AND v.idRuta = r.idRuta AND s.Chofer = c.idChofer AND c.idUsuario = u.idUsuario AND s.status = '0' agregar unidad la parte de PLACA */
 

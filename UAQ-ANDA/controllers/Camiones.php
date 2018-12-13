@@ -809,7 +809,7 @@
               // Hacemos uso de la función date() para que nuestrio tiempo se convierta a tipo de dato date
               $time = date('H:i:s',strtotime($time));
               // Comprobamos que la hora del viaje que vamos a incertar no coincida con otro horario
-              if ($hrmenos<$time) {
+              if ($hrmenos<$time && $time<$col['Horario']) {
                 // Si es asi nuestra bandera $bandCf cambia a 1
                 $bandCf = 1;
               }
@@ -828,7 +828,7 @@
               // Hacemos uso de la función date() para que nuestrio tiempo se convierta a tipo de dato date
               $time = date('H:i:s',strtotime($time));
               // Comprobamos que la hora del viaje que vamos a incertar no coincida con otro horario
-              if ($hrmenos<$time) {
+              if ($hrmenos<$time && $time<$col['Horario']) {
                 // Si es asi nuestra bandera $bandCf cambia a 1
                 $bandUn = 1;
               }

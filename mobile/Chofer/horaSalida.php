@@ -53,13 +53,14 @@ function salir($idViaje){
     'body' => '¡El viaje a iniciado con exito!'
   );
 
-  $ch = curl_init();
+  
   $server_key= 'AAAA38EOB9k:APA91bEjbHv0MKUUv45NhyAIxVmQwWm0vN8ScAetaMJhZhgQuHFZljdiZ8w02rn-73r0NEwK83EhWb-qqFpaHlEGNXcejyK7ovzJWjg-jep0YXFcNVVFrHvawKMLiPddwB6qsnmpThTP';
   $headers = array(
     'Content-Type:application/json',
     'Authorization:key='.$server_key
   );
   for ($i=0; $i <count($datos); $i++) {
+    $ch = curl_init();
     $tok = $datos[$i]['token'];
     $fields = array
     (
@@ -72,9 +73,10 @@ function salir($idViaje){
     curl_setopt( $ch,CURLOPT_RETURNTRANSFER, true );
     curl_setopt( $ch,CURLOPT_SSL_VERIFYPEER, false );
     curl_setopt( $ch,CURLOPT_POSTFIELDS,json_encode($fields));
+    $result = curl_exec($ch);
+    curl_close( $ch );
   }
-  $result = curl_exec($ch);
-  curl_close( $ch );
+  
   return $bandera;
 }
 ?>

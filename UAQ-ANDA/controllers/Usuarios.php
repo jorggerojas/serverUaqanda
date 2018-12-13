@@ -102,6 +102,7 @@
     */
   function aprobarSolicitudUsuario()
     {
+      $this->loadOtherModel('Usuarios');
       // Se verifica la existencias de las variables de sesion y que estas sean diferentes de nulo
       if ($this->comprobarSesion()) {
         try {
@@ -110,7 +111,7 @@
             // Se recibe el id por medio del metodo POST y se almacena en la variable id
             $id = $_POST['id'];
             // Se llama a la funcion aceptarStatusUser(int $id)
-            $op = $this->model->aceptarStatusUser($id);
+            $op = $this->Usuarios->aceptarStatusUser($id);
             // Se devuelve lo que nos regresa la funcion por medio de un objeto tipo JSON
             echo json_encode($op, JSON_UNESCAPED_UNICODE);
           }else {
@@ -135,6 +136,7 @@
 
     function eliminarSolicitudUsuario()
     {
+      $this->loadOtherModel('Usuarios');
       // Se verifica la existencias de las variables de sesion y que estas sean diferentes de nulo
       if ($this->comprobarSesion()) {
         try {
@@ -143,7 +145,7 @@
             // Se recibe el id por medio del metodo POST y se almacena en la variable $id
             $id = $_POST['id'];
             // Se llama a la funcion deleteStatusUser(int $id) con la variable id como parámetro
-            $op = $this->model->deleteStatusUser($id);
+            $op = $this->Usuarios->deleteStatusUser($id);
             // Se devuelve lo que nos regresa la funcion por medio de un objeto tipo JSON
             echo json_encode($op, JSON_UNESCAPED_UNICODE);
           }else {

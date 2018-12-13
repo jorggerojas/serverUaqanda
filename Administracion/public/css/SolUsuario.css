@@ -1,0 +1,145 @@
+.solicitud{
+	margin-top: 100px;
+	width: 100%;
+	height: 80px;
+	box-sizing: border-box;
+}
+
+	h2{
+		font-family: var(--fuente);
+		text-align: center;
+	}
+
+.caja{
+	width: 100%;
+	height: 100px;
+	box-sizing: border-box;
+}
+
+.usuario{
+	width: 50%;
+	height: 100px;
+	float: left;
+	box-sizing: border-box;
+}
+
+	p{
+		font-family: var(--fuente);
+		margin-top: 5px;
+		margin-left: 20%;
+		margin-bottom: -.5em;
+	}
+
+	h4{
+		font-family: var(--fuente);
+		margin-top: 1%;
+		margin-left: 20%;
+	}
+
+.botones{
+	width: 50%;
+	float: right;
+	margin-top: -2%;
+	height: 100px;
+	box-sizing: border-box;
+}
+
+.botones2{
+	width: 50%;
+	float: right;
+	margin-top: -12%;
+	height: 100px;
+	box-sizing: border-box;
+}
+
+	img{
+		height: 60px;
+		width: 60px;
+		float: left;
+	}
+
+	.botones>button{
+		background: transparent;
+		border: none;
+		margin-top: 30px;
+		margin-left: 10%;
+		float: left;
+	}
+
+	.botones2>button{
+		background: transparent;
+		border: none;
+		margin-top: 30px;
+		margin-left: 10%;
+		float: left;
+	}
+
+	.rechazar{
+		margin-top: 1em !important;
+	}
+
+.fondo{
+	transition: 2s-all;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.8);
+	left: 0px;
+	top: 0px;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.mensaje{
+	transition: 2s-all;
+	width: 300px;
+	height: 150px;
+	position: fixed;
+	left: calc(50% - 150px);
+	top: calc(50% - 75px);
+	background: white;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px 10px rgba(0,0,0,.3);
+	visibility: hidden;
+	opacity: 0;
+}
+
+	.mensaje>p{
+		color: rgba(0,0,0,.5);
+		text-align: center;
+		font-family: var(--fuente);
+		margin-top: 5px;
+	}
+
+	.mensaje>button{
+		color: white;
+		margin-top: 10px;
+		width: 50%;
+		margin-left: 25%;
+		border-radius: 15px;
+		height: 30px;
+		border: none;
+		font-family: var(--fuente);
+	}
+
+	.ver-fondo{
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.ver-mensaje{
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.save{
+		background: var(--verde);
+	}
+
+	.cancel{
+		background: var(--rojo);
+	}
+
+	.modificar{
+		background: var(--modi);
+	}

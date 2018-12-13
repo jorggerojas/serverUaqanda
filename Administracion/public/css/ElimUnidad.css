@@ -1,0 +1,202 @@
+.titulo{
+	height: 60px;
+	width: 100%;
+	margin-top: 90px;
+	box-sizing: border-box;
+}
+
+	.titulo>h1{
+		font-family: var(--fuente);
+		text-align: center;
+		color: black;
+	}
+
+hr{
+	border-top: 1px dotted #8c8b8b;
+	margin-top: 2em;
+}
+
+.boton{
+	width: 50%;
+	height: 50px;
+	background: green;
+}
+
+.inicio{
+	width: 100%;
+	height: 100%;
+}
+
+.caja{
+	width: 100%;
+	height: 100px;
+	margin-top: 2em;
+}
+
+.usuario{
+	height: 100px;
+	width: 20%;
+	font-family: var(--fuente);
+	margin-left: 10%;
+	float: left;
+}
+
+.botones{
+	height: 50%;
+	width: 60%;
+	float: right;
+	margin-top: .5em;
+}
+
+	.cancel{
+		background: var(--rojo);
+		font-family: var(--fuente);
+		border-radius: 5px;
+		height: 3em;
+		width: 6em;
+		margin-left: 1em;
+		border: none;
+		color: white;
+	}
+
+	.modificar{
+		background: var(--verde);
+		font-family: var(--fuente);
+		border-radius: 5px;
+		height: 3em;
+		width: 6em;
+		border: none;
+		margin-left: 3em;
+		color: white;
+	}
+
+	.registrar{
+		background: var(--modi);
+		font-family: var(--fuente);
+		border-radius: 5px;
+		height: 3em;
+		width: 6em;
+		border: none;
+		margin-left: 10em;
+		color: white;
+	}
+
+	.solicitudes{
+		background: var(--azul2);
+		font-family: var(--fuente);
+		border-radius: 5px;
+		height: 3em;
+		width: 6em;
+		border: none;
+		margin-left: 3em;
+		color: white;
+	}
+
+.superior{
+	width: 100%;
+	height: 100px;
+	margin-top: 90px;
+	box-sizing: border-box;
+}
+
+h2{
+	font-family: var(--fuente);
+	margin-left: 6em;
+
+}
+
+.registro{
+	background: var(--modi);
+	font-family: var(--fuente);
+	border-radius: 5px;
+	height: 3em;
+	width: 10em;
+	margin-left: 10em;
+	margin-top: 1em;
+	border: none;
+	color: white;
+}
+
+.select{
+	margin-top: 1em;
+	width: 100%;
+	height: 50px;
+}
+
+select{
+	font-family: var(--fuente);
+	width: 12em;
+	height: 2.5em;
+	margin-left: 43em;
+	text-align: center;
+}
+
+.info>p{
+	font-family: var(--fuente);
+}
+
+.fondo{
+	transition: 2s-all;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.8);
+	left: 0px;
+	top: 0px;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.mensaje{
+	transition: 2s-all;
+	width: 300px;
+	height: 150px;
+	position: fixed;
+	left: calc(50% - 150px);
+	top: calc(50% - 75px);
+	background: white;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px 10px rgba(0,0,0,.3);
+	visibility: hidden;
+	opacity: 0;
+}
+
+	.mensaje>p{
+		color: rgba(0,0,0,.5);
+		text-align: center;
+		font-family: var(--fuente);
+		margin-top: 5px;
+	}
+
+	.mensaje>button{
+		color: white;
+		margin-top: 10px;
+		width: 50%;
+		margin-left: 25%;
+		border-radius: 15px;
+		height: 30px;
+		border: none;
+		font-family: var(--fuente);
+	}
+
+	.ver-fondo{
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.ver-mensaje{
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.save{
+		background: var(--verde);
+	}
+
+	.cancel{
+		background: var(--rojo);
+	}
+
+	.modificar{
+		background: var(--modi);
+	}

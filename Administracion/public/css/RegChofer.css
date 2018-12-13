@@ -1,0 +1,198 @@
+.inicio{
+	width: 100%;
+	height: 400px;
+}
+
+	.inicio>button{
+		border-radius: 20px;
+		height: 25px;
+		width: 150px;
+		text-align: center;
+		margin-left: 39%;
+		font-family: var(--fuente);
+		font-size: 13px;
+		border-style: none;
+		margin-top: 20px;
+		background: var(--azul2);
+		color: white;
+	}
+
+.izquierda{
+	width: 50%;
+	height: 400px;
+	float: left;
+}
+
+	.izquierda>img{
+		height: 20px;
+		width: 20px;
+		text-align: center;
+		float: left;
+		margin-left: 165px;
+		margin-top: 12px;
+		position: absolute;
+	}
+
+	.izquierda>p{
+		font-family: var(--fuente);
+		margin-top: 30px;
+		text-align: center;
+	}
+
+
+	.izquierda>input{
+		margin-top: 10px;
+		height: 20px;
+		width: 300px;
+		margin-left: 25%;
+		text-indent: 30px;
+	}
+
+.derecha{
+	width: 50%;
+	height: 400px;
+	float: right;
+}
+
+	.derecha>img{
+		height: 20px;
+		width: 20px;
+		text-align: center;
+		float: left;
+		margin-left: 165px;
+		margin-top: 12px;
+		position: absolute;
+	}
+
+	.derecha>p{
+		font-family: var(--fuente);
+		margin-top: 40px;
+		text-align: center;
+	}
+
+
+	.derecha>input{
+		margin-top: 10px;
+		height: 20px;
+		width: 300px;
+		margin-left: 25%;
+		text-indent: 30px;
+		outline: none;
+	}
+
+.caja{
+	width: 100%;
+	height: 80px;
+	box-sizing: border-box;
+	background: red;
+}
+
+.usuario{
+	width: 50%;
+	height: 80px;
+	float: left;
+	box-sizing: border-box;
+	background: yellow;
+}
+
+	.usuario>p{
+		font-family: var(--fuente);
+		margin-top: 5px;
+		margin-left: 20%;
+
+	}
+
+	h4{
+		font-family: var(--fuente);
+		margin-top: 1%;
+		margin-left: 20%;
+	}
+
+.botones{
+	width: 50%;
+	float: right;
+	margin-top: -2%;
+	height: 80px;
+	box-sizing: border-box;
+	background: green;
+}
+
+	img{
+		height: 60px;
+		width: 60px;
+		float: left;
+	}
+
+	.botones>button{
+		background: transparent;
+		border: none;
+		margin-top: 30px;
+		margin-left: 10%;
+		float: left;
+	}
+
+.fondo{
+	transition: 2s-all;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.8);
+	left: 0px;
+	top: 0px;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.mensaje{
+	transition: 2s-all;
+	width: 300px;
+	height: 150px;
+	position: fixed;
+	left: calc(50% - 150px);
+	top: calc(50% - 75px);
+	background: white;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px 10px rgba(0,0,0,.3);
+	visibility: hidden;
+	opacity: 0;
+}
+
+	.mensaje>p{
+		color: rgba(0,0,0,.5);
+		text-align: center;
+		font-family: var(--fuente);
+		margin-top: 5px;
+	}
+
+	.mensaje>button{
+		color: white;
+		margin-top: 10px;
+		width: 50%;
+		margin-left: 25%;
+		border-radius: 15px;
+		height: 30px;
+		border: none;
+		font-family: var(--fuente);
+	}
+
+	.ver-fondo{
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.ver-mensaje{
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.save{
+		background: var(--verde);
+	}
+
+	.cancel{
+		background: var(--rojo);
+	}
+
+	.modificar{
+		background: var(--modi);
+	}

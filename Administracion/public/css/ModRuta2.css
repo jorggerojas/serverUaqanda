@@ -1,0 +1,184 @@
+.intro{
+	width: 70%;
+	float: right;
+	margin-bottom: 1em;
+	margin-top: 6em;
+	height: 30px;
+}
+
+.intro>p{
+	color: black;
+	font-family: var(--fuente);
+}
+
+.intro>h1{
+	color: black;
+	font-family: var(--fuente);
+}
+
+.form{
+	float: left;
+	width: 50%;
+	margin-left: 25%;
+	margin-bottom: 5em;
+	margin-top: 0% !important;
+}
+
+form{
+	float: left;
+	width: 50%;
+	margin-left: 25%;
+	margin-bottom: 5em;
+	margin-top: 7em;
+}
+
+.inicio{
+	width: 60%;
+	margin-left: 20%;
+}
+
+	.inicio .campo{
+		width: 90%;
+		margin-left: 5%;
+		font-family: var(--fuente);
+	}
+
+	.campo p{
+		text-align: center;
+		margin-bottom: .5em;
+	}
+
+	.dato{
+		padding-left: 1em;
+		float: left;
+		width: 80%;
+		margin-left: 5%;
+		margin-bottom: 1.5em;
+	}
+
+	.dato img{
+		height: 1.5em;
+		width: 1.5em;
+		float: left;
+		margin-right: 1em;
+	}
+
+	.dato select, .dato input{
+		width: calc(90% - 1em);
+		height: 2em;
+		border-radius: 5px;
+		padding-left: 5px;
+		border: 1px solid rgba(0,0,0,.1);
+		margin-top: 0;
+	}
+
+	.cero{
+		border-radius: 20px;
+		height: 25px;
+		width: 150px;
+		text-align: center;
+		margin-left: 39%;
+		font-family: var(--fuente);
+		font-size: 13px;
+		border-style: none;
+		margin-top: 10px;
+		background: var(--verde) !important;
+		color: white;
+	}
+
+
+	form>button{
+		border-radius: 20px;
+		height: 25px;
+		width: 26%;
+		margin-left: 37%;
+		text-align: center;
+		font-family: var(--fuente);
+		font-size: 13px;
+		border-style: none;
+		margin-top: 1em;
+		background: var(--azul2);
+		color: white;
+		float: left;
+		margin-bottom: 2em;
+	}
+
+	.cancel{
+		border-radius: 20px;
+		height: 25px;
+		width: 150px;
+		text-align: center;
+		margin-left: 39%;
+		font-family: var(--fuente);
+		font-size: 13px;
+		border-style: none;
+		background: var(--rojo) !important;
+		color: white;
+		margin-top: 2em;
+	}
+
+.fondo{
+	transition: 2s-all;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.8);
+	left: 0px;
+	top: 0px;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.mensaje{
+	transition: 2s-all;
+	width: 300px;
+	height: 150px;
+	position: fixed;
+	left: calc(50% - 150px);
+	top: calc(50% - 75px);
+	background: white;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px 10px rgba(0,0,0,.3);
+	visibility: hidden;
+	opacity: 0;
+}
+
+	.mensaje>p{
+		color: rgba(0,0,0,.5);
+		text-align: center;
+		font-family: var(--fuente);
+		margin-top: 5px;
+	}
+
+	.mensaje>button{
+		color: white;
+		margin-top: 10px;
+		width: 50%;
+		margin-left: 25%;
+		border-radius: 15px;
+		height: 30px;
+		border: none;
+		font-family: var(--fuente);
+	}
+
+	.ver-fondo{
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.ver-mensaje{
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.save{
+		background: var(--verde);
+	}
+
+	.cancel{
+		background: var(--rojo);
+	}
+
+	.modificar{
+		background: var(--modi);
+	}

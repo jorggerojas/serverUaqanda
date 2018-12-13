@@ -1,0 +1,98 @@
+:root{
+	--azul: #6666FF;
+	--gris: #9E9E9E;
+	--azul2: #336666;
+	--boton1: #E3F2FD;
+	--boton2: #9999CC;
+	--boton3: #669999;
+	--boton4: #66CCCC;
+	--fuente: 'Open Sans', sans-serif;
+	--letra: #FFFFFF;
+	--letra2: #000000;
+	--verde: #689F38;
+	--rojo: #D32F2F;
+	--modi: #1976D2;
+	--sepa: #90CAF9;
+	--blanc: #FFFFFF;
+}
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+header{
+	background: var(--azul);
+    height: 5em;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+}
+
+	.icono{
+		height: 60px;
+		width: 60px;
+		margin-left: 10px;
+		margin-top: 10px;
+	}
+
+	.icono2{
+		height: 4em;
+		width: 4em;
+	}
+
+	header>p{
+		font-family: var(--fuente);
+		font-size: 30px;
+		color: var(--letra);
+		text-align: center;
+	}
+
+	h1{
+		margin-top: 10px;
+		float: right;
+		margin-right: 83%;
+		font-family: var(--fuente);
+		color: white;
+		font-size: 23px;
+	}
+
+	.casa{
+		background: transparent;
+		border: none;
+		cursor: pointer;
+		outline: none;
+		float: left;
+	}
+
+	.cerrar{
+		background: transparent;
+		border: none;
+		cursor: pointer;
+		outline: none;
+		float: right;
+		position: fixed;
+		right: 5em;
+		top: 1em;
+	}
+
+footer{
+	background: var(--gris);
+	width: 100%;
+	position: fixed;
+	height: 30px;
+	font-family: var(--fuente);
+	text-align: center;
+	color: white;
+	bottom: 0;
+	left: 0;
+}
+
+footer>p{
+		color: white;
+		font-family: var(--fuente);
+		font-size: 20px;
+		margin-top: 0%;
+}

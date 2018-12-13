@@ -1,0 +1,72 @@
+:root{
+	--azul: #6666FF;
+	--gris: #EEEEEE;
+	--azul2: #336666;
+	--fuente: 'Open Sans', sans-serif;
+}
+
+.camion{
+	height: 500px;
+	width: 50%;
+	float: right;
+	top: 0;
+}
+
+	img{
+		margin-top: .5em;
+		margin-left: 2em;
+		height: 34em;
+		width: 34em;
+		float: left;
+	}
+
+.info{
+	height: 500px;
+	width: 50%;
+	float: left;
+	top: 0;
+}
+
+	.titulo{
+		width: 100%;
+		margin-top: 8em;
+	}
+
+	.titulo>h1{
+		font-family: var(--fuente);
+		color: var(--azul);
+		font-size: 50px;
+		margin-left: .5em;
+	}
+
+	.subtitulo{
+		width: 100%;
+		margin-top: 1em;
+	}
+
+	h2{
+		font-family: var(--fuente);
+		color: var(--azul2);
+		margin-left: 1em;
+		font-size: 30px;
+	}
+
+	.mensaje{
+		width: 100%;
+		margin-top: 2em;
+	}
+
+	.mensaje>p{
+		font-family: var(--fuente);
+		margin-left: 2em;
+	}
+
+button{
+	background: var(--gris);
+	height: 50px;
+	width: 300px;
+	border-radius: 5px;
+	border: none;
+	margin-left: calc(100% - 90%);
+	margin-top: 2em;
+}

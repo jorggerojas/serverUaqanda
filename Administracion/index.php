@@ -35,5 +35,5 @@
     // } else {
     //     $controller = new Controller();
     //     $controller->pageNotFound();
-    }
+    //}
 ?>

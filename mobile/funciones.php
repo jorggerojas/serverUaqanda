@@ -433,7 +433,7 @@ function getDatosViaje($us){
   $temp;
   $db = new Conexion();
   $datos = $db->query("SELECT r.PuntoInicial AS INICIO, r.PuntoFinal AS FINAL, r.Adicional AS ADICIONAL, v.Horario AS HORA,
-                          v.fecha AS FECHA
+                          v.fecha AS FECHA, res.Status AS STATUS
                           FROM rutas r, viajes v, reservaciones res
                           WHERE v.idRuta = r.idRuta AND
                           res.idViaje = v.idViaje AND res.idUsuario = '$us' AND

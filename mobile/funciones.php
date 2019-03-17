@@ -437,7 +437,7 @@ function getDatosViaje($us){
                           FROM rutas r, viajes v, reservaciones res
                           WHERE v.idRuta = r.idRuta AND
                           res.idViaje = v.idViaje AND res.idUsuario = '$us' AND
-                          res.Status = 'Reservado'");
+                          (res.Status = 'Reservado' OR res.Status = 'Confirmado') ");
   if(is_array($datos)){
     return $datos;
   }else{

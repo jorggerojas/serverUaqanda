@@ -6,7 +6,7 @@ $db = new Conexion();
 echo json_encode(1);*/
         $pass= $_POST['pass'];
         $exp = $_POST['exp']:
-        $datos = $db->query("SELECT * FROM usuarios WHERE ClaveExpediente='$exp' AND Password = '$pass');
+        $datos = $db->query("SELECT * FROM usuarios);
         if($datos != ""){
             //Se envían los datos en un arreglo JSON
             echo json_encode($datos);

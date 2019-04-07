@@ -54,7 +54,7 @@ class Conexion
     * @param $qry - recibe el qry que mandara a la BD
     * @return $response - regresa false si la BD no regreso columnas, si regreso columnas regresa un arreglo asociativo
     */
-    public function query($qry)
+    public function qy($qry)
     {
         $result = $this->link->query($qry);
 
